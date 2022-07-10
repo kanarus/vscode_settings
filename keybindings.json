@@ -1,0 +1,39 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    // なんかターミナル（パネル）の方が強い。
+    /*
+    - ターミナルは出てきた時点でフォーカスされるのに、explorerはされない
+    */
+
+    {"key": "ctrl+shift+q", "command": "workbench.action.reloadWindow"},
+    {"key": "ctrl+f", "command": "explorer.newFile", "when": "explorerViewletFocus"},
+    {"key": "ctrl+d", "command": "explorer.newFolder", "when": "explorerViewletFocus"},
+    {"key": "ctrl+r", "command": "renameFile", "when": "explorerViewletFocus"},
+    // delete で消去できる
+    
+    {"key": "ctrl+a", "command": "cursorMove", "args": {"to": "wrappedLineFirstNonWhitespaceCharacter"}},
+    {"key": "ctrl+e", "command": "cursorLineEnd"},
+    {"key": "ctrl+shift+right", "command": "cursorWordRightSelect"},
+    {"key": "ctrl+shift+left", "command": "cursorWordLeftSelect"},
+    {"key": "ctrl+shift+]", "command": "cursorLineEndSelect"},
+    {"key": "ctrl+shift+[", "command": "cursorLineStartSelect"},
+    {"key": "ctrl+down", "command": "cursorMove", "args": {"to": "nextBlankLine"}},
+    {"key": "ctrl+up", "command": "cursorMove", "args": {"to": "prevBlankLine"}},
+
+    {"key": "ctrl+z", "command": "workbench.action.togglePanel"},
+    {"key": "ctrl+s", "command": "workbench.action.toggleSidebarVisibility"},
+    {"key": "ctrl+shift+s", "command": "workbench.files.action.focusFilesExplorer", "when": "!explorerViewletFocus"},
+    {"key": "ctrl+shift+s", "command": "workbench.action.terminal.focus", "when": "explorerViewletFocus && panelVisible"},
+    {"key": "ctrl+shift+s", "command": "workbench.action.focusActiveEditorGroup", "when": "explorerViewletFocus && !panelVisible"},
+    
+    {
+        "command": "vscode-neovim.compositeEscape1",
+        "key": "j",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "j"
+    },
+]
+// Ctrl + Tab で VSCode 上のファイル移動はうまくできる
+// Ctrl + Shift + @ (= Ctrl + `) で integrated terminal の出し入れ, ただし閉じるたびにプロセスも落ちる
+// Alt + Tab で VSCode <-> Chrome (<-> Terminal) の行き来はうまくできる
+// Terminal は常に見えている必要はない + 継続する必要のあるコマンド (npm run dev など) は integrated terminal でできないので適宜 Alt + Tab を使う感じ
