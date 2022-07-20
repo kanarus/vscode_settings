@@ -16,15 +16,20 @@
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "editor.fontFamily": " Cica, monospace,  'monospace', 'Droid Sans Mono'",
     "rust-analyzer.hover.actions.enable": false,
-    "rust-analyzer.inlayHints.renderColons": false,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.lens.debug.enable": false,
     "rust-analyzer.lens.enable": false,
     "rust-analyzer.lens.run.enable": false,
     "rust-analyzer.lens.implementations.enable": false,
     "rust-analyzer.lens.forceCustomCommands": false,
-    "terminal.integrated.fontSize": 22,
     "terminal.integrated.fontFamily": "Cica",
     "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "terminal.integrated.fontSize": 18,
+    "rust-analyzer.hover.actions.gotoTypeDef.enable": false,
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "files.watcherExclude": {
+        "**/target/**": true
+    }
 }
